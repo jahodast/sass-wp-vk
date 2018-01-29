@@ -653,17 +653,31 @@ nav li > ol {
 	list-style: none;
 }
 #site-navigation {
-   //box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-   position: relative;
-   //background-color: transparent;// #232323;
-   //border-top: 4px solid $stan-color-secondary;
+  position: relative; 
 }
-#site-navigation .inner-wrap {
-   position: relative;
-   background: linear-gradient(lighten($stan-color-primary, 5%) 55%, $stan-color-primary 56%);
-   border-top: 1px solid lighten($stan-color-primary, 15%);
+#site-navigation .inner-wrap,
+.stick-wrapper #site-navigation .inner-wrap ,
+{
+  //border-top: 1px solid lighten($stan-color-primary, 15%);
+  background: linear-gradient(lighten($stan-color-primary, 5%) 55%, $stan-color-primary 56%);
+  @include border-radius(7px);
+}
+
+#site-navigation .inner-wrap,
+{
    @include border-radius(7px);
 }
+
+.is-sticky .main-navigation,
+.is-sticky #site-navigation .inner-wrap,
+{
+   background: linear-gradient(lighten($stan-color-primary, 5%) 55%, $stan-color-primary 56%);
+   //border-top: 1px solid lighten($stan-color-primary, 15%);
+   @include border-radius(0px);
+}
+
+
+
 .home-icon {
    float: left;
 }
@@ -706,7 +720,7 @@ nav li > ol {
 	padding: 10px 12px;
   text-transform: uppercase;
 
-  border-width: 0px 2px 2px 0px;
+  border-width: 0px 2px 0px 0px;
   border-style: solid;
   -webkit-border-image: 
     -webkit-gradient(linear, 100% 0, 0 0, from(lighten($stan-color-primary, 25%)), to(darken($stan-color-primary, 25%))) 1 100%;
@@ -724,7 +738,7 @@ nav li > ol {
 }
 
 .main-navigation li:first-child a {
-  border-width: 0px 2px 2px 2px;
+  border-width: 0px 2px 0px 2px;
   border-style: solid;
   -webkit-border-image: 
     -webkit-gradient(linear, 100% 0, 0 0, from(lighten($stan-color-primary, 25%)), to(darken($stan-color-primary, 25%))) 1 100%;
@@ -767,7 +781,7 @@ li.default-menu {
 .main-navigation ul li.current_page_item > a,
 .main-navigation ul li:hover > a {
   color: $stan-color-secondary;
-  @include transition-all(0.15s);
+  @include transition-all(0.2s);
 }
 
 .main-navigation li:after,
@@ -793,7 +807,8 @@ li.default-menu {
 .main-navigation ul li:hover:after
 {
   opacity: 1;
-  @include transition-all(0.10s);
+  //@include transition-all(0.10s);
+
 }
 
 .main-navigation li.menu-item-has-children > a:after,
@@ -2534,7 +2549,8 @@ Responsive Structure
       width: 94%;
    }
 }
-@media screen and (max-width:768px) {
+//@media screen and (max-width:768px) {
+  @media screen and (max-width:790px) {
    #header-text-nav-wrap {
       padding: 10px 0;
    }
