@@ -24,6 +24,18 @@ and Blueprint http://www.blueprintcss.org/
             border-radius: $radius;
 }
 
+@mixin transition-all($duration) {
+    /* Firefox */
+    -moz-transition: all $duration ease-in;
+    /* WebKit */
+    -webkit-transition: all $duration ease-in;
+    /* Opera */
+    -o-transition: all $duration ease-in;
+    /* Standard */
+    transition: all $duration ease-in;
+}
+
+
 @import 'variables/colors';
 @import 'theme/theme-style';
 @import 'header/header';
