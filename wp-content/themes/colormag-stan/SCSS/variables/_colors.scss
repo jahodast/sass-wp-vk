@@ -64,6 +64,33 @@ $color-soundcloud: #ff3a00;
 $color-vine: #00bf8f;
 $color-delicious: #2a96ff;
 
-/*========== Stan colors ==============*/
+/* Lighter - darker */
+
+$stan-color-darker-5: rgba(0, 0, 0, 0.05);
+$stan-color-darker-10: rgba(0, 0, 0, 0.1);
+$stan-color-darker-20: rgba(0, 0, 0, 0.1);
+$stan-color-lighter-10: rgba(255, 255, 255, 0.1);
+$stan-color-lighter-30: rgba(255, 255, 255, 0.5);
+
+/*========== Stan brown 1 ==============
+$stan-color-bg: rgb(252, 245, 238);
 $stan-color-primary: #5f5246;
-$stan-color-secondary: #e0a771;
+$stan-color-secondary: #9c7f63;
+$stan-color-txt-primary: #000000;
+$stan-color-link: #5f5246;
+$stan-color-hover: #e7ded5;
+*/
+
+/*========= Stan green =============*/
+$stan-color-bg: rgb(240, 240, 240);
+$stan-color-primary: #527614;
+$stan-color-secondary: #789D34;
+$stan-color-txt-primary: #000000;
+$stan-color-txt-grey: #747474;
+$stan-color-link: rgb(0, 0, 0);
+$stan-color-link-1: #527614;
+$stan-color-hover: #000000;
+$stan-color-hover-dark: #000000;
+
+$stan-color2-primary: #4d422d;
+$stan-color2-secondary: rgb(107, 99, 81);

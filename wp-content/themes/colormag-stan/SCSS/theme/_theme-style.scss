@@ -88,7 +88,7 @@ textarea {
 	word-wrap: break-word;
 }
 body {
-	background-color: #eaeaea;
+	background-color: $stan-color-bg;
 }
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -341,7 +341,7 @@ input[type="submit"]:active {
 /* =LINKS
 ----------------------------------------------- */
 a {
-	color: $stan-color-secondary;
+	color: $stan-color-link;
 	text-decoration: none;
 }
 a:focus, a:active, a:hover {
@@ -460,7 +460,7 @@ body {
 	background-color: #ffffff;
 }
 #header-text-nav-container {
-	background-color: #FFFFFF;
+	background-color: $stan-color-bg;
 }
 #header-text-nav-wrap {
 	padding: 20px 0 25px;
@@ -469,7 +469,7 @@ body {
 	float: left;
 }
 #header-logo-image {
-	float: left;
+  float: left;
    padding-right: 20px;
 }
 #header-logo-image img {
@@ -477,15 +477,27 @@ body {
 }
 #header-text {
 	float: left;
-	padding-right: 20px;
+	padding-right: 15px;
 }
+#header-text h1  {
+  font-size: 25px;
+  padding-top: 40px;
+}
+
+@media screen and (max-width: 790px) {
+  #header-text h1  {
+    padding-top: 10px;
+  }
+}
+
 #site-title {
 	padding-bottom: 0;
-	line-height: 1.2;
+  line-height: 1.1;
+  font-size: 25px;
 }
 #site-title a {
 	color: $stan-color-secondary;
-	font-size: 46px;
+	font-size: 35px;
 }
 #site-description {
 	line-height: 24px;
@@ -509,7 +521,7 @@ body {
 }
 .header-image {
 	margin-bottom: 0;
-	border-bottom: 1px solid #EAEAEA;
+	//border-bottom: 1px solid #EAEAEA;
 	width: 100%;
 }
 
@@ -655,17 +667,37 @@ nav li > ol {
 #site-navigation {
   position: relative; 
 }
+
+.sticky-wrapper {
+  margin-top: -7px;
+}
+
+div.wp-custom-header {
+  position: absolute;
+  max-width: 500px;
+  top:-20px;
+  left: 50%;
+  margin-left: -50px;
+}
+
+#header-text-nav-wrap {
+  top: 0px;
+
+}
 #site-navigation .inner-wrap,
 .stick-wrapper #site-navigation .inner-wrap ,
 {
   //border-top: 1px solid lighten($stan-color-primary, 15%);
   background: linear-gradient(lighten($stan-color-primary, 5%) 55%, $stan-color-primary 56%);
-  @include border-radius(7px);
+  @include border-radius(3px);
 }
 
-#site-navigation .inner-wrap,
+#site-navigation .inner-wrap
 {
-   @include border-radius(7px);
+   @include border-radius(3px);
+   -we-webkit-box-shadow: 0px -4px 32px 1px rgba(255,255,255,0.3);
+   -moz-box-shadow: 0px -4px 32px 1px rgba(255,255,255,0.3);
+   box-shadow: 0px -4px 32px 1px rgba(255,255,255,0.3);
 }
 
 .is-sticky .main-navigation,
@@ -674,6 +706,9 @@ nav li > ol {
    background: linear-gradient(lighten($stan-color-primary, 5%) 55%, $stan-color-primary 56%);
    //border-top: 1px solid lighten($stan-color-primary, 15%);
    @include border-radius(0px);
+   -we-webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   box-shadow: none;
 }
 
 
@@ -698,9 +733,18 @@ nav li > ol {
   text-align: center;
 }
 
+
 .menunav-menu > li:first-child {
   margin-left: 10px;
 }
+
+@media screen and (max-width: 790px) {
+  .menunav-menu > li:first-child {
+    margin-left: 0px;
+  }
+}
+
+
 .menunav-menu > li:last-child {
   margin-right: 10px;
 }
@@ -723,15 +767,15 @@ nav li > ol {
   border-width: 0px 2px 0px 0px;
   border-style: solid;
   -webkit-border-image: 
-    -webkit-gradient(linear, 100% 0, 0 0, from(lighten($stan-color-primary, 25%)), to(darken($stan-color-primary, 25%))) 1 100%;
+    -webkit-gradient(linear, 100% 0, 0 0, from(lighten($stan-color-primary, 25%)), to(darken($stan-color-primary, 20%))) 1 100%;
   -webkit-border-image: 
-    -webkit-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 25%)) 1 100%;
+    -webkit-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 20%)) 1 100%;
   -moz-border-image:
-    -moz-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 25%)) 1 100%;  
+    -moz-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 20%)) 1 100%;  
   -o-border-image:
-    -o-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 25%)) 1 100%;
+    -o-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 20%)) 1 100%;
   border-image:
-    linear-gradient(to right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 25%)) 1 100%; 
+    linear-gradient(to right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 20%)) 1 100%; 
 
   text-shadow: 0 1px 0 rgba(0,0,0,.4);
   overflow: hidden;
@@ -741,15 +785,15 @@ nav li > ol {
   border-width: 0px 2px 0px 2px;
   border-style: solid;
   -webkit-border-image: 
-    -webkit-gradient(linear, 100% 0, 0 0, from(lighten($stan-color-primary, 25%)), to(darken($stan-color-primary, 25%))) 1 100%;
+    -webkit-gradient(linear, 100% 0, 0 0, from(lighten($stan-color-primary, 25%)), to(darken($stan-color-primary, 20%))) 1 100%;
   -webkit-border-image: 
-    -webkit-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 25%)) 1 100%;
+    -webkit-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 20%)) 1 100%;
   -moz-border-image:
-    -moz-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 25%)) 1 100%;  
+    -moz-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 20%)) 1 100%;  
   -o-border-image:
-    -o-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 25%)) 1 100%;
+    -o-linear-gradient(right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 20%)) 1 100%;
   border-image:
-    linear-gradient(to right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 25%)) 1 100%; 
+    linear-gradient(to right, lighten($stan-color-primary, 25%), darken($stan-color-primary, 20%)) 1 100%; 
 
 }
 
@@ -780,8 +824,8 @@ li.default-menu {
 .main-navigation ul li.current-menu-ancestor > a,
 .main-navigation ul li.current_page_item > a,
 .main-navigation ul li:hover > a {
-  color: $stan-color-secondary;
-  @include transition-all(0.2s);
+  color: $stan-color-hover;
+  @include transition-all(0.1s);
 }
 
 .main-navigation li:after,
@@ -994,7 +1038,7 @@ li.default-menu {
 #main {
 	padding-top: 30px;
 	padding-bottom: 20px;
-	background-color: #ffffff;
+	background-color: $stan-color-bg;
 }
 
 /* =POST FORMAT
@@ -1343,7 +1387,7 @@ li.default-menu {
 ----------------------------------------------- */
 #secondary .widget ul li, #colophon .widget ul li {
 	line-height: 1.5;
-	padding: 5px 0;
+  padding: 5px 0;
 }
 #colophon .widget ul li {
 	border-bottom: 1px solid #444444;
@@ -1361,22 +1405,35 @@ li.default-menu {
 	width: 60%;
 }
 #secondary .widget-title {
-	border-bottom: 2px solid $stan-color-secondary;
+ 	//border-bottom: 2px solid $stan-color-primary;
    font-size: 18px;
    margin-bottom: 15px;
    padding-bottom: 0;
 }
 #secondary .widget-title span {
-   background-color: $stan-color-secondary;
-   color: #fff;
-   padding: 6px 12px;
-   display: inline-block;
+  //@include border-radius(7px 7px 0px 0px);
+  //background: linear-gradient(lighten($stan-color-primary, 5%) 55%, $stan-color-primary 56%);
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  //background-color: $stan-color-secondary;
+  color: $stan-color-link-1;
+  display: block;
+  width: 100%;
 }
 #secondary .widget, .error-404 .widget {
-	margin-bottom: 35px;
+  //@include border-radius(8px);
+  margin-bottom: 35px;
 	font-size: 14px;
-   background-color: #ffffff;
+  background-color: $stan-color-lighter-30;
+  border: 1px solid $stan-color-darker-10;
+  -webkit-box-shadow: 0px 0px 8px $stan-color-darker-10;
+  -moz-box-shadow: 0px 0px 8px $stan-color-darker-10;
+  box-shadow: 0px 0px 8px $stan-color-darker-10;
+  padding: 18px 15px 10px 15px;
 }
+
 #secondary .widget p {
    font-size: 14px;
 }
@@ -1392,6 +1449,120 @@ li.default-menu {
 }
 #secondary .widget-title a.rsswidget {
    color: #fff;
+}
+
+.widget_recent_entries ul li {
+  border-top: 1px solid $stan-color-darker-5; 
+  padding: 12px 0px !important;
+  font-size: 95%;
+  font-weight: 550;
+  clear: both;
+  overflow: auto;
+}
+
+.widget_recent_entries ul li .post-date {
+  float: left;
+  width: 16%;
+  text-align: center;
+  line-height: 1.1;
+  position: relative;
+  color: $stan-color-txt-grey;
+  display: inline-block;
+  width: 45px;
+}
+
+.widget_recent_entries ul li .post-date .day {
+  font-size: 140%;
+  font-weight: 550;
+  text-align: center;
+  display: block;
+}
+
+.widget_recent_entries ul li .post-date:before {
+  content: "";
+  border-left: 3px solid $stan-color-darker-20;
+  top: 0px;
+  position: absolute;
+  left: 0px;
+  display: block;
+  height: 100%;
+  margin: auto;
+}
+
+.widget_recent_entries ul li .post-desc {
+  display: inline-block;
+  max-width: 200px;
+}
+
+.widget_recent_entries ul li:hover,
+.widget_recent_entries ul li:hover a,
+.widget_recent_entries ul li:hover .post-date
+ {
+  color: $stan-color-primary;
+  cursor: pointer;
+  @include transition-all(0.1s);
+}
+
+.widget_recent_entries ul li:hover a .post-date:before
+ {
+  border-left: 3px solid $stan-color-primary;
+  //@include transition-all(0.3s);
+}
+
+.widget_recent_entries ul li:hover .post-date {
+  color: $stan-color-hover-dark;
+}
+
+.widget_category_post_list_widget h2 a {
+  font-size: 15px;
+  font-weight: 550;
+  color: $stan-color-link;
+}
+
+@media screen and (max-width: 1100px) {
+  .widget_recent_entries ul li {
+    overflow: hidden;
+  }
+
+  .widget_recent_entries ul li .post-date .day {
+    display: inline; 
+  }
+  .widget_recent_entries ul li .post-date, .widget_recent_entries ul li .post-desc {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .widget_recent_entries ul li .post-date {
+    padding-left: 10px;
+  }
+
+}
+
+.newsdesc {
+  border-bottom: 1px solid $stan-color-darker-5;
+}
+
+.newsdesc:last-child {
+  border-bottom: none;
+}
+
+.newsdesc a img {
+  float: left;
+}
+
+.newsdesc p {
+  display: inline-block;
+  width: 60%;
+  font-size: 100% !important;
+}
+
+.newsdesc h2 {
+  padding-bottom: 5px;
+}
+
+.post_content{
+  border-bottom: none;
 }
 
 /* =FOOTER WIDGET AREA
@@ -1578,6 +1749,11 @@ a#scroll-up:hover {
    padding: 3px 10px;
    display: inline-block;
 }
+
+.cat-links a {
+  background-color: $stan-color2-secondary !important;
+}
+
 .widget_featured_posts .article-content .entry-title {
    padding: 10px 0 0;
    font-size: 22px;
@@ -1641,6 +1817,11 @@ a#scroll-up:hover {
    font-size: 22px;
 }
 #content .post {
+  background-color: $stan-color-lighter-30;
+  border: 1px solid $stan-color-darker-10;
+  -webkit-box-shadow: 0px 0px 8px $stan-color-darker-10;
+  -moz-box-shadow: 0px 0px 8px $stan-color-darker-10;
+  box-shadow: 0px 0px 8px $stan-color-darker-10;
 }
 .single #content .post,
 #content .post {
@@ -1654,6 +1835,16 @@ a#scroll-up:hover {
 }
 #content .post img {
    margin-bottom: 0;
+    zoom: 2;  //increase if you have very small images
+
+    display: block;
+    margin: auto;
+
+    height: auto;
+    max-height: 100%;
+
+    width: auto;
+    max-width: 100%;
 }
 #content .post .article-content {
    padding: 15px;
@@ -1666,11 +1857,12 @@ a#scroll-up:hover {
    padding: 3px 10px;
 }
 #content .post .article-content .entry-title {
-   padding: 5px 0 0;
-   font-size: 32px;
+   padding: 15px 0 0;
+   font-size: 1.2em;
+   font-weight: 600;
 }
 #content .post .article-content .entry-title a {
-   color: #232323;
+   color: $stan-color-link-1;
 }
 #content .post .article-content .entry-title a:hover {
    color: $stan-color-secondary;
@@ -2499,9 +2691,7 @@ a#scroll-up:hover {
 .image-popup {
 
 }
-.featured-image {
 
-}
 .post .featured-image {
    text-align: center;
 }
@@ -2726,7 +2916,14 @@ Responsive Structure
 --------------------------------------------------------------*/
 
 div.wp-custom-header {
-    position: relative;
+    //right: 0px;
+    //top: 0px; 
+}
+
+@media screen and (max-width: 791px) {
+  div.wp-custom-header {
+    display: none;
+  }
 }
 
 iframe#wp-custom-header-video {
